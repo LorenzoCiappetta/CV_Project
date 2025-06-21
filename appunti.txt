@@ -1,0 +1,11 @@
+TRANSFORMER MODEL:
+
+    CVUSADataset:
+        aerial_transform: either use transform.Resize((224, 224)) (match model output), or modify decoder to output 750x750 images (add more upsampling layers, increase computational requirements)
+
+    Model for generating ground truth segmentation maps of aerial images:
+        confront performances by choosing different models and parameters
+
+
+
+
