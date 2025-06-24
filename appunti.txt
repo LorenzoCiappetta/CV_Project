@@ -1,3 +1,11 @@
+SEGMENTATION MAP MODEL:
+
+    Model weights for segmentation map model U-Net: https://solaris.readthedocs.io/en/latest/pretrained_models.html
+
+    Install solaris: https://github.com/CosmiQ/solaris/tree/main?tab=readme-ov-file   (install miniconda first)
+
+
+
 TRANSFORMER MODEL:
 
     CVUSADataset:
