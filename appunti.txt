@@ -1,19 +1,68 @@
-SEGMENTATION MAP MODEL:
+TRANSFORMER MODEL CHECKPOINTS (MyDrive/transformer_logs):
 
-    Model weights for segmentation map model U-Net: https://solaris.readthedocs.io/en/latest/pretrained_models.html
+	Transformer model 1:
 
-    Install solaris: https://github.com/CosmiQ/solaris/tree/main?tab=readme-ov-file   (install miniconda first)
+		/checkpoints: ignore
+
+		/checkpoints_2: ignore
+
+		/checkpoints_3:
+			SegFormer encoder
+			WeightedCrossEntropy loss for segmap
+			l1 loss for aerial images
+
+				lightning_logs/version_14: epochs with frozen encoder (0-3)
+
+				lightning_logs/version_2: epochs 0-13
+
+				lightning_logs/version_10: epochs 13-20
+
+				lightning_logs/version_11: epochs 20-last
+
+
+	Transformer model 2:
+
+		/checkpoints_4:
+			sawthiha/segformer-b0-finetuned-deprem-satellite encoder
+			WeightedFocalLoss + DiceLoss for segmap
+			CosineAnnealing scheduler
+
+				lightning_logs/version_20: epochs 0-25
+					0.7 * PerceptualLoss + 0.3 * L1loss for aerial images
+					Total loss: loss_seg + 0.7 * loss_aerial
+
+				lightning_logs/version_24: epochs 25-35
+					0.5 * PerceptualLoss + 0.5 * L1loss for aerial images
+					Total loss: 0.5 * loss_seg + 0.5 * loss_aerial
+
+
+	Transformer model 3:
+
+		/checkpoints_5:
+			different data augmentation
+			sawthiha/segformer-b0-finetuned-deprem-satellite encoder
+			different decoder architectures (residual blocks)
+			WeightedFocalLoss + DiceLoss for segmap
+			0.7 * PerceptualLoss + 0.3 * L1loss for aerial images
+			Learned weights for weighted sum for total loss
+			VGG input issue fixed for perceptual loss
+			PSNR and IoU Monitoring
+			OneCycle scheduler
+
+				lightning_logs/version_25:
+
+					Phase1: epochs 1-25
+
+					Phase2:epochs 26-30
+						encoder frozen
+						LR for decoders 10x higher, LR for adaptive loss lower
+						higher value for weight decay, higher gradient clipping
 
 
 
-TRANSFORMER MODEL:
+	Transformer model 4:
 
-    CVUSADataset:
-        aerial_transform: either use transform.Resize((224, 224)) (match model output), or modify decoder to output 750x750 images (add more upsampling layers, increase computational requirements)
-
-    Model for generating ground truth segmentation maps of aerial images:
-        confront performances by choosing different models and parameters
-
-
-
+		/checkpoint_6:
+			original square aerial images instead of resized ones
+			different data augmentation
 
