@@ -50,10 +50,10 @@ TRANSFORMER MODEL CHECKPOINTS (MyDrive/transformer_logs):
 			OneCycle scheduler
 
 				lightning_logs/version_25:
-
 					Phase1: epochs 1-25
 
-					Phase2:epochs 26-30
+				lightning_logs/version_26:
+					Phase2: epochs 26-30
 						encoder frozen
 						LR for decoders 10x higher, LR for adaptive loss lower
 						higher value for weight decay, higher gradient clipping
@@ -66,3 +66,8 @@ TRANSFORMER MODEL CHECKPOINTS (MyDrive/transformer_logs):
 			original square aerial images instead of resized ones
 			different data augmentation
 
+				lightning_logs/version_27:
+					Phase1: epochs 1-18
+
+				lightning_logs/version_28:
+					Phase2: epochs 18-26
