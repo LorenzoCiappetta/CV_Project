@@ -71,3 +71,13 @@ TRANSFORMER MODEL CHECKPOINTS (MyDrive/transformer_logs):
 
 				lightning_logs/version_28:
 					Phase2: epochs 18-26
+
+
+		/checkpoint_7:
+			fixed error in preprocessing
+
+				lightning_logs/version_30:
+					Phase1: epochs 1-20
+
+				lightning_logs/version_31:
+					Phase2: epochs 20-26
