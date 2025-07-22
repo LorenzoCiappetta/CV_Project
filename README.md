@@ -14,16 +14,24 @@ The final model should generate an aerial embedding that is the closest possible
   - **encoder**: version of nvidia/segformer-b0-finetuned-ade-512-512, fine-tuned on satellite semantic dataset (https://huggingface.co/sawthiha/segformer-b0-finetuned-deprem-satellite)
   - **aerial view decoder**
   - **segmentation map decoder**
- 
-![Transformer model architecture](assets/transformer_architecture.png)  
+
+<p align="center">
+  <img src="assets/transformer_architecture.png" alt="Transformer model architecture" style="width:60%; max-width:400px; height:auto;"/>
+</p>
 
 - **`JointFeatureLearningNet`**:  
   - **VGG16** pretrained on *ImageNet* for feature extraction
   - **fully connected layers**
   - **attention module** (alternative approach)
- 
-![JointFeatureLearningNet architecture](assets/JFLN_architecture_1.png)  
-![JointFeatureLearningNet alternative architecture](assets/JFLN_architecture_2.png)  
+
+
+
+<p align="center">
+  <img src="assets/JFLN_architecture_1.png" alt="JointFeatureLearningNet architecture" style="width:60%; max-width:400px; height:auto;"/>
+</p>
+<p align="center">
+  <img src="assets/JFLN_architecture_2.png" alt="JointFeatureLearningNet alternative architecture" style="width:60%; max-width:400px; height:auto;"/>
+</p>
 
 
 - **`FeatureFusionNet`**:
@@ -31,8 +39,14 @@ The final model should generate an aerial embedding that is the closest possible
   - **fully connected layer** for concatenated embedding from ground and synthetic features
   - **shallow FNN layer** for concatenated embedding from ground and synthetic features (alternative approach)
 
-![FeatureFusionNet architecture](assets/FNN_architecture_1.png)  
-![FeatureFusionNet alternative architecture](assets/FNN_architecture_2.png)  
+
+
+<p align="center">
+  <img src="assets/FFN_architecture_1.png" alt="FeatureFusionNet architecture" style="width:50%; max-width:300px; height:auto;"/>
+</p>
+<p align="center">
+  <img src="assets/FFN_architecture_2.png" alt="FeatureFusionNet alternative architecture" style="width:50%; max-width:300px; height:auto;"/>
+</p>
 
 
 ## Contents:
