@@ -3,3 +3,4 @@ CVUSA_subset/
 venv/
 segmap_assets/
 segmap_datasets/
+trained_models/

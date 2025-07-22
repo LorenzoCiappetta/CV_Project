@@ -92,6 +92,12 @@ JOINT FEATURE LEARNING NET MODEL CHECKPOINTS (MyDrive/JFLN_logs):
 			lightning_logs/version_0:
 				epochs 0-25
 
+		/checkpoints_2:
+			different architecture (with attention module)
+
+				lightning_logs/version_12 - lightning_logs/version_13:
+					epochs 0-35
+
 
 
 FEATURE FUSION NET MODEL CHECKPOINTS (MyDrive/FFN_logs):
